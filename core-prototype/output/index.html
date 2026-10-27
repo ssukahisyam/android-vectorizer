@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Hasil Kalibrasi Mode Vektorisasi</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+  h1 { margin-bottom: 8px; font-size: 24px; color: #38bdf8; }
+  p.desc { color: #94a3b8; margin-top: 0; margin-bottom: 32px; font-size: 14px; }
+  .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 28px; border: 1px solid #334155; }
+  .card-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: #e2e8f0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .item-box { background: #0f172a; border-radius: 8px; padding: 12px; border: 1px solid #334155; display: flex; flex-direction: column; align-items: center; }
+  .item-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #38bdf8; text-align: center; }
+  .preview-wrapper { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%), linear-gradient(-45deg, #1e293b 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1e293b 75%), linear-gradient(-45deg, transparent 75%, #1e293b 75%); background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0px; border-radius: 6px; overflow: hidden; }
+  .preview-wrapper img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  .metrics { margin-top: 10px; font-size: 11px; color: #94a3b8; width: 100%; display: flex; justify-content: space-between; }
+  .badge { background: #0284c7; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+</style>
+</head>
+<body>
+  <h1>Evaluasi & Kalibrasi Mode Vektorisasi</h1>
+  <p class="desc">Perbandingan visual antara gambar raster asli dan output SVG dari masing-masing mode preset. Perhatikan kebersihan garis, hilangnya bintik noise, dan bentuk kurva.</p>
+  <div class="card">
+    <div class="card-title">Uji Sampel: panda.png</div>
+    <div class="grid">
+      <div class="item-box" style="border-color: #38bdf8;">
+        <div class="item-title"><span class="badge" style="background:#64748b;">ASLI</span> Raster</div>
+        <div class="preview-wrapper"><img src="../../ref_imagetracerjava/panda.png" alt="Original"></div>
+        <div class="metrics"><span>Input Bitmap</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Logo & Clipart</div>
+        <div class="preview-wrapper"><img src="panda_png_logo_flat_graphic.svg" alt="LOGO_FLAT_GRAPHIC"></div>
+        <div class="metrics"><span>Time: 366 ms</span><span>Paths: 72</span><span>Size: 16.3 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Line Art & Sketsa</div>
+        <div class="preview-wrapper"><img src="panda_png_line_art_sketch.svg" alt="LINE_ART_SKETCH"></div>
+        <div class="metrics"><span>Time: 85 ms</span><span>Paths: 7</span><span>Size: 4.2 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Foto / Ilustrasi Warna</div>
+        <div class="preview-wrapper"><img src="panda_png_color_detailed.svg" alt="COLOR_DETAILED"></div>
+        <div class="metrics"><span>Time: 291 ms</span><span>Paths: 952</span><span>Size: 108.2 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Pixel Art / Retro</div>
+        <div class="preview-wrapper"><img src="panda_png_pixel_art.svg" alt="PIXEL_ART"></div>
+        <div class="metrics"><span>Time: 230 ms</span><span>Paths: 2391</span><span>Size: 399.9 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Siluet & Monokrom</div>
+        <div class="preview-wrapper"><img src="panda_png_monochrome_silhouette.svg" alt="MONOCHROME_SILHOUETTE"></div>
+        <div class="metrics"><span>Time: 14 ms</span><span>Paths: 6</span><span>Size: 3.0 KB</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Uji Sampel: smiley.png</div>
+    <div class="grid">
+      <div class="item-box" style="border-color: #38bdf8;">
+        <div class="item-title"><span class="badge" style="background:#64748b;">ASLI</span> Raster</div>
+        <div class="preview-wrapper"><img src="../../ref_imagetracerjava/smiley.png" alt="Original"></div>
+        <div class="metrics"><span>Input Bitmap</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Logo & Clipart</div>
+        <div class="preview-wrapper"><img src="smiley_png_logo_flat_graphic.svg" alt="LOGO_FLAT_GRAPHIC"></div>
+        <div class="metrics"><span>Time: 1 ms</span><span>Paths: 3</span><span>Size: 0.4 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Line Art & Sketsa</div>
+        <div class="preview-wrapper"><img src="smiley_png_line_art_sketch.svg" alt="LINE_ART_SKETCH"></div>
+        <div class="metrics"><span>Time: 0 ms</span><span>Paths: 3</span><span>Size: 0.3 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Foto / Ilustrasi Warna</div>
+        <div class="preview-wrapper"><img src="smiley_png_color_detailed.svg" alt="COLOR_DETAILED"></div>
+        <div class="metrics"><span>Time: 1 ms</span><span>Paths: 5</span><span>Size: 0.5 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Pixel Art / Retro</div>
+        <div class="preview-wrapper"><img src="smiley_png_pixel_art.svg" alt="PIXEL_ART"></div>
+        <div class="metrics"><span>Time: 3 ms</span><span>Paths: 5</span><span>Size: 1.1 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Siluet & Monokrom</div>
+        <div class="preview-wrapper"><img src="smiley_png_monochrome_silhouette.svg" alt="MONOCHROME_SILHOUETTE"></div>
+        <div class="metrics"><span>Time: 1 ms</span><span>Paths: 2</span><span>Size: 0.2 KB</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Uji Sampel: 1.png</div>
+    <div class="grid">
+      <div class="item-box" style="border-color: #38bdf8;">
+        <div class="item-title"><span class="badge" style="background:#64748b;">ASLI</span> Raster</div>
+        <div class="preview-wrapper"><img src="../../ref_imagetracerjava/testimages/1.png" alt="Original"></div>
+        <div class="metrics"><span>Input Bitmap</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Logo & Clipart</div>
+        <div class="preview-wrapper"><img src="1_png_logo_flat_graphic.svg" alt="LOGO_FLAT_GRAPHIC"></div>
+        <div class="metrics"><span>Time: 0 ms</span><span>Paths: 3</span><span>Size: 0.4 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Line Art & Sketsa</div>
+        <div class="preview-wrapper"><img src="1_png_line_art_sketch.svg" alt="LINE_ART_SKETCH"></div>
+        <div class="metrics"><span>Time: 0 ms</span><span>Paths: 3</span><span>Size: 0.3 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Foto / Ilustrasi Warna</div>
+        <div class="preview-wrapper"><img src="1_png_color_detailed.svg" alt="COLOR_DETAILED"></div>
+        <div class="metrics"><span>Time: 0 ms</span><span>Paths: 5</span><span>Size: 0.5 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Pixel Art / Retro</div>
+        <div class="preview-wrapper"><img src="1_png_pixel_art.svg" alt="PIXEL_ART"></div>
+        <div class="metrics"><span>Time: 1 ms</span><span>Paths: 5</span><span>Size: 1.1 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Siluet & Monokrom</div>
+        <div class="preview-wrapper"><img src="1_png_monochrome_silhouette.svg" alt="MONOCHROME_SILHOUETTE"></div>
+        <div class="metrics"><span>Time: 0 ms</span><span>Paths: 2</span><span>Size: 0.2 KB</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Uji Sampel: 10.png</div>
+    <div class="grid">
+      <div class="item-box" style="border-color: #38bdf8;">
+        <div class="item-title"><span class="badge" style="background:#64748b;">ASLI</span> Raster</div>
+        <div class="preview-wrapper"><img src="../../ref_imagetracerjava/testimages/10.png" alt="Original"></div>
+        <div class="metrics"><span>Input Bitmap</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Logo & Clipart</div>
+        <div class="preview-wrapper"><img src="10_png_logo_flat_graphic.svg" alt="LOGO_FLAT_GRAPHIC"></div>
+        <div class="metrics"><span>Time: 188 ms</span><span>Paths: 651</span><span>Size: 98.2 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Line Art & Sketsa</div>
+        <div class="preview-wrapper"><img src="10_png_line_art_sketch.svg" alt="LINE_ART_SKETCH"></div>
+        <div class="metrics"><span>Time: 80 ms</span><span>Paths: 37</span><span>Size: 10.4 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Foto / Ilustrasi Warna</div>
+        <div class="preview-wrapper"><img src="10_png_color_detailed.svg" alt="COLOR_DETAILED"></div>
+        <div class="metrics"><span>Time: 124 ms</span><span>Paths: 3684</span><span>Size: 320.5 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Pixel Art / Retro</div>
+        <div class="preview-wrapper"><img src="10_png_pixel_art.svg" alt="PIXEL_ART"></div>
+        <div class="metrics"><span>Time: 118 ms</span><span>Paths: 9526</span><span>Size: 1026.4 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Siluet & Monokrom</div>
+        <div class="preview-wrapper"><img src="10_png_monochrome_silhouette.svg" alt="MONOCHROME_SILHOUETTE"></div>
+        <div class="metrics"><span>Time: 5 ms</span><span>Paths: 21</span><span>Size: 7.0 KB</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Uji Sampel: 11.png</div>
+    <div class="grid">
+      <div class="item-box" style="border-color: #38bdf8;">
+        <div class="item-title"><span class="badge" style="background:#64748b;">ASLI</span> Raster</div>
+        <div class="preview-wrapper"><img src="../../ref_imagetracerjava/testimages/11.png" alt="Original"></div>
+        <div class="metrics"><span>Input Bitmap</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Logo & Clipart</div>
+        <div class="preview-wrapper"><img src="11_png_logo_flat_graphic.svg" alt="LOGO_FLAT_GRAPHIC"></div>
+        <div class="metrics"><span>Time: 51 ms</span><span>Paths: 61</span><span>Size: 12.4 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Line Art & Sketsa</div>
+        <div class="preview-wrapper"><img src="11_png_line_art_sketch.svg" alt="LINE_ART_SKETCH"></div>
+        <div class="metrics"><span>Time: 3 ms</span><span>Paths: 6</span><span>Size: 1.2 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Foto / Ilustrasi Warna</div>
+        <div class="preview-wrapper"><img src="11_png_color_detailed.svg" alt="COLOR_DETAILED"></div>
+        <div class="metrics"><span>Time: 66 ms</span><span>Paths: 288</span><span>Size: 32.9 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Pixel Art / Retro</div>
+        <div class="preview-wrapper"><img src="11_png_pixel_art.svg" alt="PIXEL_ART"></div>
+        <div class="metrics"><span>Time: 31 ms</span><span>Paths: 948</span><span>Size: 153.7 KB</span></div>
+      </div>
+      <div class="item-box">
+        <div class="item-title"><span class="badge">MODE</span> Siluet & Monokrom</div>
+        <div class="preview-wrapper"><img src="11_png_monochrome_silhouette.svg" alt="MONOCHROME_SILHOUETTE"></div>
+        <div class="metrics"><span>Time: 4 ms</span><span>Paths: 6</span><span>Size: 0.9 KB</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Gradle & Android build outputs
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+
+# Android Studio & IDE
+.idea/
+*.iml
+local.properties
+.DS_Store
+
+# Logs
+*.log
